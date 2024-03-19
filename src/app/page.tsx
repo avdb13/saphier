@@ -1,23 +1,23 @@
-import Hero from "./components/Hero";
-import Description from "./components/Description";
-import Strategy from "./components/Strategy";
+import Hero from './components/Hero'
+import Description from './components/Description'
+import Strategy from './components/Strategy'
 
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import Portofolio from "./components/Portofolio";
-import ContactForm from "./components/Contact";
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import Portofolio from './components/Portofolio'
+import ContactForm from './components/Contact'
 
-config.autoAddCss = false;
+config.autoAddCss = false
 
 const Home = () => (
-  <main className="container bg-white pb-8">
+  <main className="[&>*]:p-[2rem] mx-auto">
     <Hero />
-    <Description />
-    <Strategy />
-    <Portofolio />
-    <ContactForm />
   </main>
 )
+// <Description />
+// <Strategy />
+// <Portofolio />
+// <ContactForm />
 
 // <main>
 //   <div>
@@ -103,4 +103,4 @@ const Home = () => (
 //   </div>
 // </main>
 
-export default Home;
+export default Home

@@ -1,28 +1,28 @@
-"use client";
+'use client'
 
 const Navbar = () => {
   const items = [
     {
-      title: "Werkwijze",
-      path: "/strategies",
+      title: 'Werkwijze',
+      path: '/strategies'
     },
     {
-      title: "Diensten",
-      path: "/services",
+      title: 'Diensten',
+      path: '/services'
     },
     {
-      title: "Over ons",
-      path: "/about-us",
+      title: 'Over ons',
+      path: '/about-us'
     },
     {
-      title: "Contact",
-      path: "/contact",
-    },
-  ];
+      title: 'Contact',
+      path: '/contact'
+    }
+  ]
 
   return (
-    <header className="border-b-[2rem] border-white p-8 py-4 container flex justify-between w-full bg-slate-100 hue-rotate-15">
-      <a href="/#" className="flex items-center min-w-36 px-6 text-2xl underline underline-offset-4 decoration-2 decoration-slate-300">
+    <header className="w-screen border-b-2 border-slate-300 shadow-md flex justify-between py-4 px-[1rem]">
+      <a href="/#" className="flex items-center  text-2xl underline underline-offset-4 decoration-2 decoration-slate-300">
         <span className="font-bold text-slate-500">SAP</span>
         <span className="font-semibold text-slate-600">HIER</span>
       </a>
@@ -38,16 +38,14 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className="flex items-center gap-2 cut login-button">
-        <a
-          href="/#"
-          className="relative flex items-center justify-center font-medium px-8 py-2 top-[0.2em] text-slate-700 z-10 hover:text-light duration-500"
-        >
-          Mijn SAPHIER
-        </a>
-      </div>
+      <a
+        href="/#"
+        className="button flex items-center bg-white text-dark border-[1px] border-dark"
+      >
+        <span className="relative">Mijn SAPHIER</span>
+      </a>
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

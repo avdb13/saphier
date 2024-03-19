@@ -5,6 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { Ref, useEffect, useMemo, useRef, useState } from "react";
 
+import One from "public/strategy-1.jpg";
+import Two from "public/strategy-2.jpg";
+import Three from "public/strategy-3.jpg";
+import Four from "public/strategy-4.jpg";
+
 const Strategy = () => {
   const [isIntersecting, setIntersecting] = useState(false);
   const ref: Ref<HTMLDivElement> = useRef(null);
@@ -51,7 +56,7 @@ const Timeline = () => {
         description: <>Na kennismaking voeren we altijd een vrijblijvende analyse uit van de staat
           van de accounts die we na eventueel akkoord in beheer zullen nemen. Mocht het
           uiteindelijk toch niet tot een samenwerking komen, even goede vrienden!</>,
-        src: "/strategy-1.jpg",
+        src: One,
         icon: faMagnifyingGlass,
       },
       {
@@ -61,7 +66,7 @@ const Timeline = () => {
           hoef jij niets meer te doen, wij nemen alles over en zorgen voor de best mogelijke
           resultaten.
         </>,
-        src: "/strategy-2.jpg",
+        src: Two,
         icon: faListCheck,
       },
       {
@@ -69,7 +74,7 @@ const Timeline = () => {
         description: <>Vervolgens trekken we een aantal dagen uit waarop we alle content
           voor de maand zullen schieten. Afhankelijk van de hoeveelheid foto&apos;s en video&apos;s is het
           al mogelijk om binnen dezelfde week te beginnen met posten.</>,
-        src: "/strategy-3.jpg",
+        src: Three,
         icon: faCameraRetro,
       },
       {
@@ -79,7 +84,7 @@ const Timeline = () => {
             href="/profile/dashboard">{"Mijn SAPHIER"}</a>.
           Zo blijft alles dat te maken heeft met jouw online aanwezigheid moeiteloos op één plek te volgen.
           Superhandig!</>,
-        src: "/strategy-4.jpg",
+        src: Four,
         icon: faCommentDots,
       },
     ]
@@ -93,7 +98,7 @@ const Timeline = () => {
             <FontAwesomeIcon icon={icon} size="2xl" />
           </div>
           <div className="timeline-event-date" />
-          <div className="timeline-event-content ">
+          <div className="timeline-event-content">
             <div className="timeline-event-title">
               {title}
             </div>

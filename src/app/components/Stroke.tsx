@@ -1,6 +1,5 @@
-
 const Stroke = () => (
-  <svg className="intro stroke py-8 sm:-mb-16 font-serif" viewBox="-40 -10 200 55">
+  <svg className="intro stroke font-serif" viewBox="-40 -20 200 70">
     <text textAnchor="start" x="0" y="0" className="text text-stroke" clipPath="url(#text1)">val op</text>
     <text textAnchor="start" x="0" y="20" className="text text-stroke" clipPath="url(#text2)">met content die</text>
     <text textAnchor="start" x="0" y="40" className="text text-stroke" clipPath="url(#text3)">herinnerd wordt.</text>
@@ -17,10 +16,6 @@ const Stroke = () => (
       <clipPath id="text3">
         <text textAnchor="start" x="0" y="40" className="text">herinnerd wordt.</text>
       </clipPath>
-      <linearGradient id="shape-gradient-base">
-        <stop offset="0%" stopColor="var(--color-start)" />
-        <stop offset="100%" stopColor="var(--color-stop)" />
-      </linearGradient>
       <linearGradient id="shape-gradient-a">
         <stop offset="0%" stopColor="var(--color-start)" />
         <stop offset="100%" stopColor="var(--color-stop)" />
@@ -38,4 +33,4 @@ const Stroke = () => (
   </svg>
 )
 
-export default Stroke;
+export default Stroke
