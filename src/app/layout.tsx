@@ -1,27 +1,44 @@
 import type { Metadata } from "next";
-import { Inter, Josefin_Sans, Martian_Mono, Outfit } from "next/font/google";
+import { Josefin_Sans, Outfit, Aleo, PT_Sans_Narrow, DM_Serif_Text } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
-const sans = Outfit(
+
+const base = Outfit(
+  {
+    subsets: ["latin"],
+    variable: "--font-base",
+  }
+);
+
+const sans = Josefin_Sans(
   {
     subsets: ["latin"],
     variable: "--font-sans"
   }
 );
 
-const serif = Josefin_Sans(
+const serif = DM_Serif_Text(
   {
     subsets: ["latin"],
-    variable: "--font-serif"
+    variable: "--font-serif",
+    weight: "400"
   }
 );
 
-const mono = Martian_Mono(
+const mono = PT_Sans_Narrow(
   {
     subsets: ["latin"],
-    variable: "--font-mono"
+    variable: "--font-mono",
+    weight: "400"
+  }
+);
+
+const handwritten = Aleo(
+  {
+    subsets: ["latin"],
+    variable: "--font-handwritten"
   }
 );
 
@@ -36,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl" className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
-      <body >
+    <html lang="nl" className={`${base.variable} ${sans.variable} ${serif.variable} ${mono.variable} ${handwritten.variable}`}>
+      <body>
         <Navbar />
         {children}
         <Footer />
