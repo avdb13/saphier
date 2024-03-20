@@ -28,14 +28,14 @@ const Hero = () => {
         </p>
         <div className="flex items-start justify-center gap-2 p-8 grow">
           <a
-            href="/#"
+            href="/#strategy"
             className="button raise  bg-primary text-white border-[1px] border-primary"
           >
             <FontAwesomeIcon icon={faWandMagicSparkles} className=" mr-2" />
             Werkwijze
           </a>
           <a
-            href="/#"
+            href="/#portfolio"
             className="button raise  flex items-center bg-white text-dark border-[1px] border-dark"
           >
             <FontAwesomeIcon icon={faSwatchbook} className=" mr-2" />

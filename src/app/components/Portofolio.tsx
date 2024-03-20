@@ -26,7 +26,7 @@ const Portofolio = () => {
   }
 
   return (
-    <div className="slider-container mb-[4rem]">
+    <div id="portfolio" className="slider-container mb-[4rem]">
       <Slider {...settings}>
         {Array.from(Array(7).keys()).map(i => (
           <div key={i}>
