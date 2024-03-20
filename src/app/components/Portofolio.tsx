@@ -1,41 +1,42 @@
-'use client';
+'use client'
 
-import 'pure-react-carousel/dist/react-carousel.es.css';
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
-import { CarouselProvider, Slider, Slide, ButtonNext, ButtonBack } from "pure-react-carousel";
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
+import Image from 'next/image'
+import Slider, { type Settings } from 'react-slick'
+import { useState } from 'react'
 
 const Portofolio = () => {
+  const [number, setNumber] = useState(0)
+
+  const settings: Settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    easing: 'cubic-bezier(0.75, 0, 0.25, 1)',
+    arrows: false,
+    beforeChange: (n) => { setNumber(n + 1) }
+  }
+
   return (
-    <div className="flex flex-col items-center pb-16">
-      <h1 className={`pt-8 text-7xl text-[#333] font-bold`}>Portfolio</h1>
-      <CarouselProvider
-        tag="ul"
-        className="flex justify-center items-center scale-75 mx-16 sm:scale-50 sm:-my-24"
-        totalSlides={7}
-        naturalSlideWidth={800}
-        naturalSlideHeight={450}
-        currentSlide={0}
-        infinite
-        isPlaying={true}
-      >
-        <ButtonBack>
-          <FontAwesomeIcon className="p-8" icon={faArrowLeft} size="2xl" />
-        </ButtonBack>
-        <Slider className="min-w-[800px] min-h-[225px] grow" classNameAnimation="carousel">
-          {Array.from(Array(7).keys()).map(i => (
-            <Slide classNameVisible={"scale-100 grayscale-0 blur-none"} classNameHidden={"scale-75 grayscale blur-md"} key={i} index={i} className={`gallery`}>
-              <Image src={`/demos/preview-${i + 1}.jpg`} width={800} height={450} loading="eager" alt="preview" />
-            </Slide>
-          ))}
-        </Slider>
-        <ButtonNext>
-          <FontAwesomeIcon className="p-8" icon={faArrowRight} size="2xl" />
-        </ButtonNext>
-      </CarouselProvider>
+    <div className="slider-container mb-[4rem]">
+      <Slider {...settings}>
+        {Array.from(Array(7).keys()).map(i => (
+          <div key={i}>
+            <Image src={`/demos/preview-${i + 1}.jpg`} width={400} height={225} loading="eager" alt="preview" className={`${number === i ? 'blur-none grayscale-none scale-90' : 'blur-md grayscale scale-75'} duration-1000`} />
+          </div>
+        ))}
+      </Slider>
     </div>
   )
 }
+// classNameVisible={'p-[1rem] grayscale-0 blur-none duration-500'} classNameHidden={'grayscale blur-md duration-1000'} key={i} index={i} className={'gallery'}
 
-export default Portofolio;
+export default Portofolio

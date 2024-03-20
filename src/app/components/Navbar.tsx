@@ -21,8 +21,8 @@ const Navbar = () => {
   ]
 
   return (
-    <header className="w-screen border-b-2 border-slate-300 shadow-md flex justify-between py-4 px-[1rem]">
-      <a href="/#" className="flex items-center  text-2xl underline underline-offset-4 decoration-2 decoration-slate-300">
+    <header className="w-screen border-b-2 border-slate-400 shadow-md flex justify-between px-[2rem] py-[1rem]">
+      <a href="/#" className="flex items-center  text-2xl underline underline-offset-4 decoration-2 decoration-slate-300 font-mono">
         <span className="font-bold text-slate-500">SAP</span>
         <span className="font-semibold text-slate-600">HIER</span>
       </a>
@@ -40,7 +40,7 @@ const Navbar = () => {
       </ul>
       <a
         href="/#"
-        className="button flex items-center bg-white text-dark border-[1px] border-dark"
+        className="button flex items-center bg-sky-50 text-dark border-[1px] border-dark"
       >
         <span className="relative">Mijn SAPHIER</span>
       </a>

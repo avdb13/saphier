@@ -4,8 +4,8 @@ module.exports = {
     "es2021": true
   },
   "extends": [
-    "standard-with-typescript",
-    "plugin:@typescript-eslint/recommended",
+    // "standard-with-typescript",
+    // "plugin:@typescript-eslint/recommended",
     "next",
     "next/core-web-vitals",
   ],

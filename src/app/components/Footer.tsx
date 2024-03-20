@@ -1,5 +1,5 @@
-import { faFacebookSquare, faTiktok, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookSquare, faTiktok, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = () => (
   <footer className="container bg-dark text-white p-8">
@@ -66,6 +66,6 @@ const Footer = () => (
       </ul>
     </div>
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

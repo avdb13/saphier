@@ -9,16 +9,17 @@ import Stroke from './Stroke'
 // </div>
 //   <Stroke />
 // </div>
+
 const Hero = () => {
   return (
-    <div className="flex flex-wrap justify-center">
-      <div className='flex flex-wrap gap-[2rem] justify-evenly items-center grow'>
+    <div className="flex flex-wrap justify-center ">
+      <div className='flex flex-wrap gap-[2rem] justify-evenly items-center grow mb-[4rem]'>
         <div className='text-[2.5rem] leading-snug font-extrabold text-[#2b2d42] py-[4rem] w-screen bg-slate-100'>
           <div className='mx-auto w-fit'>val op met<br /> content die<br /> <span className='fancy hue-rotate-[30deg] saturate-[.3]'>herinnerd wordt.</span></div>
         </div>
         <Image src={'/hero.jpg'} width={300} height={300} alt="businessman" className="shadow-frame mb-[15px] mix-blend-multiply" />
       </div>
-      <div className="flex flex-col grow items-center justify-evenly py-12 px-20 h-full">
+      <div className="flex flex-col grow items-center justify-evenly h-full">
         <p className="px-[1rem] text-center text-base sm:text-xl">
           actief zijn op sociale media en de juiste content plaatsen is cruciaal
           voor uitbreiding van je merk & klantbereik,<wbr /> maar kan ingewikkeld & tijdrovend

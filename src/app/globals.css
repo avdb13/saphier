@@ -11,7 +11,7 @@
 
 @layer components {
   .button {
-    @apply flex items-center justify-center rounded-md font-medium px-8 py-2 shadow-button duration-300;
+    @apply flex items-center justify-center rounded-md font-medium px-[1rem] py-[0.25rem] shadow-button duration-300;
   }
 
   /* .container { */
@@ -310,7 +310,7 @@
   }
 
   .title-right {
-    width: 375px;
+    width: 10rem;
     animation: title-right 7s;
   }
 
@@ -343,12 +343,12 @@
 
     30% {
       opacity: 1;
-      width: 375px;
+      width: 10rem;
     }
 
     100% {
       opacity: 1;
-      width: 375px;
+      width: 10rem;
     }
   }
 
@@ -411,7 +411,6 @@
     --tl-dark: #24b47e;
     display: flex;
     flex-direction: column;
-    margin: 20px auto;
     animation: fade-up 5s ease-out;
   }
 
@@ -423,17 +422,19 @@
   }
 
   .timeline-event {
-    margin-bottom: 20px;
+    margin: 1rem 0;
     position: relative;
     display: flex;
-    margin: 20px 0;
+    margin: 1.5rem 0;
     border-radius: 6px;
     align-self: center;
-    width: 50vw;
+    width: 70vw;
   }
 
   .timeline-event:nth-child(2n+1) {
     flex-direction: row-reverse;
+    --tl-light: #90e0ef;
+    --tl-dark: #023e8a;
   }
 
   .timeline-event:nth-child(2n+1) .timeline-event-date {
@@ -473,7 +474,9 @@
   }
 
   .timeline-event-title {
-    font-size: 1.2rem;
+    margin: 1rem 0;
+    font-size: medium;
+    text-align: center;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 600;
@@ -482,7 +485,7 @@
   }
 
   .timeline-event-content {
-    padding: 20px;
+    padding: 1rem 1.5rem;
     box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
     background: #fff;
     width: calc(40vw - 84px);
@@ -700,16 +703,16 @@
   }
 
   .carousel {
-    transition: 1s cubic-bezier(0.75, 0, 0.25, 1);
+    transition: 5s cubic-bezier(0.75, 0, 0.25, 1);
   }
 
   .fancy {
-      background-image:
-        url("data:image/svg+xml,%3Csvg width='2250' height='900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill='%2300A080' d='M0 0h2255v899H0z'/%3E%3Ccircle cx='366' cy='207' r='366' fill='%2300FDCF'/%3E%3Ccircle cx='1777.5' cy='318.5' r='477.5' fill='%2300FDCF'/%3E%3Ccircle cx='1215' cy='737' r='366' fill='%23008060'/%3E%3C/g%3E%3C/svg%3E%0A");
-      background-size: 110% auto;
-      background-position: center;
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
+    background-image:
+      url("data:image/svg+xml,%3Csvg width='2250' height='900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill='%2300A080' d='M0 0h2255v899H0z'/%3E%3Ccircle cx='366' cy='207' r='366' fill='%2300FDCF'/%3E%3Ccircle cx='1777.5' cy='318.5' r='477.5' fill='%2300FDCF'/%3E%3Ccircle cx='1215' cy='737' r='366' fill='%23008060'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-size: 110% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 }

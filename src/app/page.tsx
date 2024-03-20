@@ -10,14 +10,14 @@ import ContactForm from './components/Contact'
 config.autoAddCss = false
 
 const Home = () => (
-  <main className="[&>*]:p-[2rem] mx-auto">
+  <main className="p-[2rem] mx-auto">
     <Hero />
+    <Portofolio />
+    <Description />
+    <Strategy />
+    <ContactForm />
   </main>
 )
-// <Description />
-// <Strategy />
-// <Portofolio />
-// <ContactForm />
 
 // <main>
 //   <div>
