@@ -51,7 +51,7 @@ const RootLayout = ({ children }: Readonly<{
   children: React.ReactNode
 }>): JSX.Element => (
   <html lang="nl" className={`${base.variable} ${sans.variable} ${serif.variable} ${mono.variable} ${handwritten.variable}`}>
-    <body className='font-base text-xs sm:text-lg lg:text-2xl max-w-screen'>
+    <body className='font-base mx-auto'>
       <Navbar />
       {children}
       <Footer />

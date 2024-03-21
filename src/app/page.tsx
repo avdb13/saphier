@@ -4,15 +4,15 @@ import Strategy from './components/Strategy'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
-import Portofolio from './components/Portofolio'
+import Portfolio from './components/Portfolio'
 import ContactForm from './components/Contact'
 
 config.autoAddCss = false
 
 const Home = () => (
-  <main className="p-[2rem] mx-auto">
+  <main className="p-[4vw] lg:p-[4rem] max-w-screen-lg mx-auto">
     <Hero />
-    <Portofolio />
+    <Portfolio />
     <Description />
     <Strategy />
     <ContactForm />

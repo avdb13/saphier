@@ -1,7 +1,7 @@
 import Anchor from './Anchor'
 
 const Description = () => (
-  <div className="flex justify-between gap-4 mb-[4rem]">
+  <div className="flex justify-between gap-4 mb-[8rem]">
     <div className=" w-full ">
       <div className=" flex flex-col items-center justify-center gap-8 h-full">
         <p className="text-dark p-4 shadow-cta rounded-md bg-white font-semibold text-2xs text-center">

@@ -2,7 +2,7 @@ import { faFacebookSquare, faTiktok, faInstagram, faYoutube } from '@fortawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = () => (
-  <footer className="container bg-dark text-white p-8">
+  <footer className="bg-dark text-white p-8">
     <div className="flex justify-between gap-16 mb-8">
       <p className="text-base font-bold tracking-wide text-gray-900 grow">
         SAPHIER

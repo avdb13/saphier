@@ -3,33 +3,33 @@ import React, { type ComponentProps } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignalMessenger, faIdeal, faMeetup, faFirstdraft } from '@fortawesome/free-brands-svg-icons'
 import { faWandMagicSparkles, faSwatchbook } from '@fortawesome/free-solid-svg-icons'
-import Stroke from './Stroke'
-
-// <div className='bg-blend-darken min-w-[64rem] rounded-md'>
-// </div>
-//   <Stroke />
-// </div>
 
 const Hero = () => {
   return (
-    <div className="flex flex-wrap justify-center ">
-      <div className='flex flex-wrap gap-[2rem] justify-evenly items-center grow mb-[4rem]'>
-        <div className='text-[2.5rem] leading-snug font-extrabold text-[#2b2d42] py-[4rem] w-screen bg-slate-100'>
-          <div className='mx-auto w-fit'>val op met<br /> content die<br /> <span className='fancy hue-rotate-[30deg] saturate-[.3]'>herinnerd wordt.</span></div>
+    <div className='mb-[8rem]'>
+      <div className='flex flex-col md:flex-row gap-[1.5rem] justify-evenly items-center mb-[4rem]'>
+        <div className='prose md:prose-lg font-extrabold text-[#2b2d42] bg-slate-100 px-[3rem] py-[2rem]'>
+          <h1 className='mx-auto'>
+            val op met<br />
+            content die<br />
+            <span className='fancy hue-rotate-[30deg] saturate-[.3] drop-shadow'>herinnerd wordt.</span>
+          </h1>
         </div>
-        <Image src={'/hero.jpg'} width={300} height={300} alt="businessman" className="shadow-frame mb-[15px] mix-blend-multiply" />
+        <div className='shadow-frame mb-[15px] mix-blend-multiply py-[2rem] px-[3rem]'>
+          <Image src={'/hero.jpg'} width={300} height={300} alt="businessman" className="mx-auto" />
+        </div>
       </div>
-      <div className="flex flex-col grow items-center justify-evenly h-full">
+      <div className="flex flex-col grow items-center justify-evenly h-full mb-[4rem]">
         <p className="px-[1rem] text-center text-base sm:text-xl">
           actief zijn op sociale media en de juiste content plaatsen is cruciaal
           voor uitbreiding van je merk & klantbereik,<wbr /> maar kan ingewikkeld & tijdrovend
           zijn. laat ons dit voor jou overnemen, zodat jij je kan focussen op de dingen
           die ertoe doen.
         </p>
-        <div className="flex items-start justify-center gap-2 p-8 grow">
+        <div className="flex items-start justify-center gap-2 p-[3rem] grow">
           <a
             href="/#strategy"
-            className="button raise  bg-primary text-white border-[1px] border-primary"
+            className="button raise bg-primary text-white border-[1px] border-primary"
           >
             <FontAwesomeIcon icon={faWandMagicSparkles} className=" mr-2" />
             Werkwijze
@@ -42,15 +42,15 @@ const Hero = () => {
             Portfolio
           </a>
         </div>
-        <div className="flex flex-col gap-4 text-[#464646] w-full py-8">
+        <div className="flex flex-col gap-4 text-[#464646] px-[3rem] min-w-[80%]">
           <h6 className="flex gap-2 items-center">
             <span className="inline-block h-px bg-gray grow"></span>
             <span className="text-sm text-center font-semibold px-4">Vertrouwd door</span>
             <span className="inline-block h-px bg-gray grow"></span>
           </h6>
-          <div className="flex items-center justify-evenly space-x-4">
+          <div className="flex items-center justify-evenly">
             {[faSignalMessenger, faMeetup, faIdeal, faFirstdraft].map(icon => (
-              <FontAwesomeIcon icon={icon} key={icon.iconName} className="text-dark" size="2xl" />
+              <FontAwesomeIcon icon={icon} key={icon.iconName} className="text-dark scale-100 sm:scale-75" size="2xl" />
             ))}
           </div>
         </div>

@@ -31,16 +31,16 @@ const Strategy = () => {
   const isVisible = useIsVisible(ref)
 
   return (
-    <div ref={ref} className="flex flex-col items-center mb-[4rem]">
-      <div className={`pt-[0.75rem] uppercase mx-auto text-2xl font-handwritten ${isVisible ? 'visible' : 'hidden'}`}>
-        <span className={'title-left font-medium text-slate-900'}>
+    <div ref={ref} className="max-w-fit mx-auto flex flex-col items-center mb-[4rem] prose md:prose-lg">
+      <h1 className={'mx-auto'}>
+        <span className={'font-semibold text-slate-900'}>
           onze
         </span>
         {' '}
-        <span className={'title-right font-bold text-slate-700'}>
+        <span className={'font-bold text-slate-700'}>
           werkwijze
         </span>
-      </div>
+      </h1>
 
       <Timeline />
     </div>
@@ -89,13 +89,13 @@ const Timeline = () => {
     ]
   ), [])
 
+  // <div className="timeline-event-icon">
+  //   <FontAwesomeIcon icon={icon} />
+  // </div>
   return (
     <ol className="timeline text-2xs">
       {items.map(({ title, description, icon }) => (
         <li key={title} className="timeline-event fade-up delay-3s timeline-event-1">
-          <div className="timeline-event-icon">
-            <FontAwesomeIcon icon={icon} size="xl" />
-          </div>
           <div className="timeline-event-date" />
           <div className="timeline-event-content">
             <div className="timeline-event-title font-mono">
