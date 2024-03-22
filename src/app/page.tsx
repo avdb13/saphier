@@ -32,7 +32,7 @@ config.autoAddCss = false
 
 const Page = () => {
   return (
-    <main className="p-[4vw] lg:p-[4rem] max-w-screen-lg mx-auto">
+    <main className="p-[1rem] md:p-[2rem] lg:p-[4rem] max-w-screen-lg overflow-x-hidden mx-auto">
       <Hero />
       <Portfolio />
       <Description />

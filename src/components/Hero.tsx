@@ -26,7 +26,7 @@ const Hero = () => {
           zijn. laat ons dit voor jou overnemen, zodat jij je kan focussen op de dingen
           die ertoe doen.
         </p>
-        <div className="flex items-start justify-center gap-2 p-[3rem] grow">
+        <div className="flex items-start justify-center gap-0 sm:gap-2 p-[3rem] grow">
           <a
             href="/#strategy"
             className="button raise bg-primary text-white border-[1px] border-primary"
@@ -42,7 +42,7 @@ const Hero = () => {
             Portfolio
           </a>
         </div>
-        <div className="flex flex-col gap-4 text-[#464646] px-[3rem] min-w-[80%]">
+        <div className="flex flex-col gap-4 text-[#464646] px-[0.5rem] md:px-[1.5rem] sm:px-[3rem] min-w-[80%]">
           <h6 className="flex gap-2 items-center">
             <span className="inline-block h-px bg-gray grow"></span>
             <span className="text-sm text-center font-semibold px-4">Vertrouwd door</span>

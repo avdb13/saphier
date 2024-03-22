@@ -31,7 +31,7 @@ const Strategy = () => {
   const isVisible = useIsVisible(ref)
 
   return (
-    <div ref={ref} className="max-w-fit mx-auto flex flex-col items-center mb-[4rem] prose md:prose-lg">
+    <div id="strategy" ref={ref} className="max-w-fit mx-auto flex flex-col items-center mb-[4rem] prose md:prose-lg">
       <h1 className={'mx-auto'}>
         <span className={'font-semibold text-slate-900'}>
           onze

@@ -3,7 +3,7 @@ import { createTransport } from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
 
 export async function POST(request: NextRequest) {
-  const { email, name, companyName, message } = await request.json()
+  const { email, name, companyName, phoneNumber, message } = await request.json()
 
   const transport = createTransport({
     service: 'gmail',
@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
     from: process.env.MY_EMAIL,
     to: process.env.THEIR_EMAIL,
     // cc: email,
-    subject: `Saphier - Bericht van ${name} ${companyName && ', ' + companyName}`,
-    text: message,
+    subject: `Saphier - Bericht van ${name}${companyName && ', ' + companyName}`,
+    text: `naam: ${name}\nbedrijfsnaam: ${companyName}\nemail: ${email}\ntelefoonnummer: ${phoneNumber}\n\n${message}`,
   }
 
   const sendMailPromise = () =>
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
   try {
     await sendMailPromise()
 
-    return NextResponse.json({ message: 'Email sent' })
+    return NextResponse.json({ message: 'success' })
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 })
   }
