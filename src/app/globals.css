@@ -781,4 +781,38 @@
       transform: translateX(200%)
     }
   }
+
+
+.loader {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  width: 6px;
+  height: 6px;
+  color: white;
+  background: currentColor;
+  border-radius: 50%;
+  box-shadow: 12.5px 1px, 5px 11px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
 }

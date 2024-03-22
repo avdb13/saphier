@@ -1,7 +1,33 @@
+'use client'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { useForm } from 'react-hook-form'
+import { sendEmail } from '@/utils/send-email'
+import { useState } from 'react'
+
+export type FormData = {
+  name: string,
+  companyName: string,
+  email: string,
+  phoneNumber: string,
+  message: string,
+};
 
 const ContactForm = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(null)
+
+  function onSubmit(data: FormData) {
+    setLoading(true)
+    sendEmail(data).then(() => {
+      setLoading(false)
+      setSuccess(true)
+    }).catch(e => setError(e))
+  }
+
   return (
     <div className="pb-[4rem] text-center prose md:prose-lg mx-auto">
       <h1 className={'text-[2.5rem] mb-[2rem] text-center text-[#333] font-bold pb-[1rem]'}>Overtuigd?</h1>
@@ -24,46 +50,58 @@ const ContactForm = () => {
             </li>
           </ul>
         </div>
-        <form method="post" action="#" className="min-w-72 grid grid-cols-2 grid-rows-5 gap-4 w-full">
+        <form onSubmit={handleSubmit(onSubmit)} className="min-w-72 grid grid-cols-2 grid-rows-5 gap-4 w-full font-base">
           <input
             className="text-sm appearance-none rounded w-full py-2 px-3 text-slate-700 bg-slate-200 leading-tight focus:shadow-outline"
-            id="email"
+            id="name"
             type="text"
             placeholder="Naam"
+            required
+            {...register('name')}
           />
           <input
             className="text-sm appearance-none rounded w-full py-2 px-3 text-slate-700 bg-slate-200 leading-tight focus:shadow-outline"
-            id="email"
+            id="companyName"
             type="text"
             placeholder="Bedrijfsnaam"
+            {...register('companyName')}
           />
           <input
             className="text-sm appearance-none rounded w-full py-2 px-3 text-slate-700 bg-slate-200 leading-tight focus:shadow-outline"
             id="email"
-            type="text"
+            type="email"
             placeholder="Email"
+            required
+            {...register('email')}
           />
           <input
             className="text-sm appearance-none rounded w-full py-2 px-3 text-slate-700 bg-slate-200 leading-tight focus:shadow-outline"
-            id="email"
+            id="phoneNumber"
             type="text"
             placeholder="Telefoonnummer"
+            {...register('phoneNumber')}
           />
           <textarea
             className="text-sm appearance-none rounded w-full py-2 px-3 text-slate-700 bg-slate-200 leading-tight focus:shadow-outline col-span-2 row-span-2"
-            id="email"
+            id="message"
             placeholder="Beschrijf jouw project ..."
+            required
+            {...register('message')}
           />
           <button
-            className="w-full bg-dark hover:bg-slate-700 text-white text-sm py-2 px-4 font-semibold rounded focus:shadow-outline col-span-2 text-center"
-            type="button"
+            className={`w-full text-white text-sm py-2 px-4 font-semibold rounded focus:shadow-outline col-span-2 text-center duration-300 ${success ? 'bg-slate-600' : 'bg-slate-800 hover:bg-slate-700'}`}
+            type="submit"
           >
-            Bevestig
+            {loading ? <Spinner /> : success ? 'Success!' : 'Bevestig'}
           </button>
         </form>
       </div>
     </div>
   )
 }
+
+const Spinner = () => (
+  <span className="loader mt-[4px]"></span>
+)
 
 export default ContactForm

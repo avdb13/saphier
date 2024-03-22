@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { Josefin_Sans, Outfit, Aleo, PT_Sans_Narrow, DM_Serif_Text } from 'next/font/google'
 import './reset.css'
 import './globals.css'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 
 const base = Outfit(
   {
